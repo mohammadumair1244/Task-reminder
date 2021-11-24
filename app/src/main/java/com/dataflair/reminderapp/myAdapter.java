@@ -1,5 +1,7 @@
 package com.dataflair.reminderapp;
 
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +28,9 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myviewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position) {
-        holder.mTitle.setText(dataholder.get(position).getTitle());                                 //Binds the single reminder objects to recycler view
+        holder.mTitle.setText(dataholder.get(position).getTitle());
+        holder.mdescp.setText(dataholder.get(position).getdescp());
+        //Binds the single reminder objects to recycler view
         holder.mDate.setText(dataholder.get(position).getDate());
         holder.mTime.setText(dataholder.get(position).getTime());
     }
@@ -38,14 +42,19 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myviewholder> {
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView mTitle, mDate, mTime;
+        TextView mTitle, mDate, mTime,mdescp;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
             mTitle = (TextView) itemView.findViewById(R.id.txtTitle);                               //holds the reference of the materials to show data in recyclerview
+            mdescp=(TextView) itemView.findViewById(R.id.descp);
             mDate = (TextView) itemView.findViewById(R.id.txtDate);
             mTime = (TextView) itemView.findViewById(R.id.txtTime);
+
+
+
+            };
         }
+
     }
-}

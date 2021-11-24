@@ -3,23 +3,30 @@ package com.dataflair.reminderapp;
 //model class is used to set and get the data from database
 
 public class Model {
-    String title, date, time;
+    String title, mdescp, date, time;
 
-    public Model() {
-    }
 
-    public Model(String title, String date, String time) {
+    public Model(String title,String descp, String date, String time) {
         this.title = title;
+        this.mdescp= descp;
         this.date = date;
         this.time = time;
     }
 
+
     public String getTitle() {
         return title;
+    }
+    public String getdescp() {
+        return mdescp;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setDescp(String descp) {
+        this.mdescp = descp;
     }
 
     public String getDate() {

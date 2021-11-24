@@ -27,7 +27,7 @@ import java.util.Date;
 public class ReminderActivity extends AppCompatActivity {
 
     Button mSubmitbtn, mDatebtn, mTimebtn;
-    EditText mTitledit;
+    EditText mTitledit,mtitle,mdescp,mtimee,mdatee,mcat,mvoice;
     String timeTonotify;
 
     @Override
@@ -40,6 +40,12 @@ public class ReminderActivity extends AppCompatActivity {
         mTimebtn = (Button) findViewById(R.id.btnTime);
         mSubmitbtn = (Button) findViewById(R.id.btnSbumit);
 
+        mtitle= (EditText) findViewById(R.id.titlee);
+        mdescp = (EditText) findViewById(R.id.descp);
+        mtimee = (EditText) findViewById(R.id.timee);
+        mdatee= (EditText) findViewById(R.id.datee);
+        mcat =(EditText) findViewById(R.id.cat);
+        mvoice =(EditText) findViewById(R.id.voicee);
 
         mTimebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,17 +64,23 @@ public class ReminderActivity extends AppCompatActivity {
         mSubmitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String title = mTitledit.getText().toString().trim();                               //access the data form the input field
+                String title = mTitledit.getText().toString().trim();//access the data form the input field
+                String titlee = mtitle.getText().toString().trim();
+                String descp = mdescp.getText().toString().trim();
+                String time_edit = mtimee.getText().toString().trim();
+                String date_edit = mdatee.getText().toString().trim();
+                String voice= mvoice.getText().toString().trim();
+
                 String date = mDatebtn.getText().toString().trim();                                 //access the date form the choose date button
                 String time = mTimebtn.getText().toString().trim();                                 //access the time form the choose time button
 
-                if (title.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Please Enter text", Toast.LENGTH_SHORT).show();   //shows the toast if input field is empty
+                if (title.isEmpty() && (titlee.isEmpty()) && (descp.isEmpty()) && (time_edit.isEmpty()) && (date_edit.isEmpty() && (voice.isEmpty())))  {
+                    Toast.makeText(getApplicationContext(), "Please Complete all the field texts", Toast.LENGTH_SHORT).show();   //shows the toast if input field is empty
                 } else {
                     if (time.equals("time") || date.equals("date")) {                                               //shows toast if date and time are not selected
                         Toast.makeText(getApplicationContext(), "Please select date and time", Toast.LENGTH_SHORT).show();
                     } else {
-                        processinsert(title, date, time);
+                        processinsert(title,titlee,descp,time_edit,date_edit,voice, date, time);
 
                     }
                 }
@@ -78,8 +90,11 @@ public class ReminderActivity extends AppCompatActivity {
         });
     }
 
+    {
+    }
 
-    private void processinsert(String title, String date, String time) {
+
+    private void processinsert(String title, String titlee, String descp, String time_edit, String date_edit, String voice, String date, String time) {
         String result = new dbManager(this).addreminder(title, date, time);                  //inserts the title,date,time into sql lite database
         setAlarm(title, date, time);                                                                //calls the set alarm method to set alarm
         mTitledit.setText("");

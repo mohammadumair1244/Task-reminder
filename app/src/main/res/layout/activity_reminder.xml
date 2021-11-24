@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,6 +11,11 @@
     tools:context=".ReminderActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,10 +33,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="Add Reminder Here..."
                 android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"/>
+                android:textStyle="bold" />
 
 
             <EditText
@@ -39,8 +44,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:layout_margin="10dp"
+                android:imeOptions="actionNext"
                 android:background="@drawable/edit_background"
                 android:hint="Enter The Task" />
+
+            <EditText
+                android:id="@+id/descp"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:imeOptions="actionNext"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_background"
+                android:hint="Enter The Description" />
+
+            <EditText
+                android:id="@+id/titlee"
+
+                android:imeOptions="actionNext"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_background"
+                android:hint="Enter The priority " />
+
+            <EditText
+                android:id="@+id/datee"
+
+                android:imeOptions="actionNext"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_background"
+                android:hint="Date" />
+
+            <EditText
+                android:id="@+id/timee"
+                android:layout_width="match_parent"
+                android:imeOptions="actionNext"
+
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_background"
+                android:hint="Time" />
+
+            <EditText
+                android:id="@+id/cat"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:imeOptions="actionNext"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_background"
+                android:hint="Category" />
+
+            <EditText
+                android:id="@+id/voicee"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:imeOptions="actionDone"
+
+                android:background="@drawable/edit_background"
+                android:hint="Voice" />
 
 
             <LinearLayout
@@ -79,5 +144,7 @@
 
     </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
+

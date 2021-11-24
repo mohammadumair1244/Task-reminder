@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/drawable/alaram.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/layout/activity_notification_message.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/layout/activity_reminder.xml" value="0.18" />
         <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/umair/Downloads/reminder-android-app/ReminderApp/app/src/main/res/layout/single_reminder_file.xml" value="0.25" />
       </map>
     </option>
   </component>
